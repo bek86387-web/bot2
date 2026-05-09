@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import mplfinance as mpf
 import io
 
-TOKEN = '8568851239:AAHMy_VrKrlM6r9v4-rPKB9mgPEa7nnpsPc'
+TOKEN = '8568851239:AAH08PrpahculGofM802IIRPgLmQ0IiqTb8'
 bot = telebot.TeleBot(TOKEN)
 
 def get_gann_fan(df, start_idx, start_price, direction='up'):
