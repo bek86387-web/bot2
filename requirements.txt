@@ -2,4 +2,6 @@ pyTelegramBotAPI
 yfinance
 pandas
 matplotlib
+mplfinance
+
 
