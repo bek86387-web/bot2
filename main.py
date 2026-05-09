@@ -57,3 +57,22 @@ def send_gann_chart(message):
 
 if __name__ == "__main__":
     bot.infinity_polling()
+
+        # 4. GRAFIK CHIZISH (Optimallashgan variant)
+        plt.figure(figsize=(10, 6))
+        plt.plot(df.index, df['close'], label='BTC/USDT', color='black', linewidth=1.5)
+        
+        # Gann chiziqlari
+        plt.plot(x_range, gann_1x1, '--', label='1x1 (45°)', color='green', alpha=0.8)
+        plt.plot(x_range, gann_2x1, '--', label='2x1 (63.75°)', color='red', alpha=0.8)
+        plt.plot(x_range, gann_1x2, '--', label='1x2 (26.25°)', color='blue', alpha=0.8)
+        
+        plt.title(f"Gann Fan Tahlili: {current_price}$")
+        plt.legend()
+        plt.grid(True, linestyle=':', alpha=0.7)
+
+        # 5. RASMNI YUBORISH (Sifatni sozlash)
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png', dpi=100) # dpi=100 rasmni yengilroq qiladi
+        buf.seek(0)
+        plt.close()
